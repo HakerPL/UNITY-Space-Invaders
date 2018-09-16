@@ -2,13 +2,13 @@
 -target:library
 -nowarn:0169
 -langversion:7
--out:"C:/Adrian/MojeProgramy/UNITY/Space Invaders/Temp/Unity.Entities.Editor.Tests.dll"
+-out:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Temp/Unity.Entities.Editor.Tests.dll
 -nostdlib
 -unsafe
--r:"C:/Adrian/MojeProgramy/UNITY/Space Invaders/Library/ScriptAssemblies/Unity.Entities.dll"
--r:"C:/Adrian/MojeProgramy/UNITY/Space Invaders/Library/ScriptAssemblies/Unity.Entities.Editor.dll"
--r:"C:/Adrian/MojeProgramy/UNITY/Space Invaders/Library/ScriptAssemblies/Unity.Collections.dll"
--r:"C:/Adrian/MojeProgramy/UNITY/Space Invaders/Library/ScriptAssemblies/Unity.Entities.Tests.dll"
+-r:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Library/ScriptAssemblies/Unity.Entities.dll
+-r:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Library/ScriptAssemblies/Unity.Entities.Editor.dll
+-r:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Library/ScriptAssemblies/Unity.Collections.dll
+-r:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Library/ScriptAssemblies/Unity.Entities.Tests.dll
 -r:C:\Adrian\Programowanie\Programy\Editor\Data\Managed/UnityEngine/UnityEngine.dll
 -r:C:\Adrian\Programowanie\Programy\Editor\Data\Managed/UnityEngine/UnityEngine.AIModule.dll
 -r:C:\Adrian\Programowanie\Programy\Editor\Data\Managed/UnityEngine/UnityEngine.ARModule.dll

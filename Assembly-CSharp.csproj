@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{A524842E-E68A-E4C1-63C8-71D08EF500FA}</ProjectGuid>
+    <ProjectGuid>{4E600BAB-DAA3-8719-8E4C-0D14587F2B56}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -60,80 +60,82 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Bullet\BulletMove.cs" />
     <Compile Include="Assets\Scripts\ButtonManager.cs" />
     <Compile Include="Assets\Scripts\DestroyObject.cs" />
     <Compile Include="Assets\Scripts\DestroyShields.cs" />
     <Compile Include="Assets\Scripts\EnemyCollision.cs" />
-    <Compile Include="Assets\Scripts\HybridECS\Bullet\BulletMoveSystem.cs" />
-    <Compile Include="Assets\Scripts\HybridECS\Bullet\BulletShot.cs" />
-    <Compile Include="Assets\Scripts\HybridECS\Bullet\BulletSpeed.cs" />
-    <Compile Include="Assets\Scripts\HybridECS\EnemyShoot\EnemyShoot.cs" />
-    <Compile Include="Assets\Scripts\HybridECS\EnemyShoot\EnemyShootSytem.cs" />
+    <Compile Include="Assets\Scripts\EnemyShoot\EnemyShoot.cs" />
+    <Compile Include="Assets\Scripts\example.cs" />
+    <Compile Include="Assets\Scripts\GameControler\GameControler.cs" />
+    <Compile Include="Assets\Scripts\GameControler\PlayerSpawn.cs" />
     <Compile Include="Assets\Scripts\HybridECS\PlayerMove\PlayerSpeed.cs" />
     <Compile Include="Assets\Scripts\HybridECS\PlayerMove\PlayerSpeedSystem.cs" />
     <Compile Include="Assets\Scripts\HybridECS\PlayerShoot\PlayerShoot.cs" />
     <Compile Include="Assets\Scripts\HybridECS\PlayerShoot\PlayerShootSystem.cs" />
-    <Compile Include="Assets\Scripts\PlayerLife.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerDead.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerLife.cs" />
     <Compile Include="Assets\Scripts\ShieldLife.cs" />
+    <Compile Include="Assets\SpawnLifes.cs" />
     <Reference Include="Unity.Entities.Properties">
-      <HintPath>C:/Adrian/MojeProgramy/UNITY/Space Invaders/Library/ScriptAssemblies/Unity.Entities.Properties.dll</HintPath>
+      <HintPath>C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Library/ScriptAssemblies/Unity.Entities.Properties.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Properties.Codegen">
-      <HintPath>C:/Adrian/MojeProgramy/UNITY/Space Invaders/Library/ScriptAssemblies/Unity.Properties.Codegen.dll</HintPath>
+      <HintPath>C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Library/ScriptAssemblies/Unity.Properties.Codegen.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Jobs">
-      <HintPath>C:/Adrian/MojeProgramy/UNITY/Space Invaders/Library/ScriptAssemblies/Unity.Jobs.dll</HintPath>
+      <HintPath>C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Library/ScriptAssemblies/Unity.Jobs.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Jobs.Editor">
-      <HintPath>C:/Adrian/MojeProgramy/UNITY/Space Invaders/Library/ScriptAssemblies/Unity.Jobs.Editor.dll</HintPath>
+      <HintPath>C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Library/ScriptAssemblies/Unity.Jobs.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Entities.Editor">
-      <HintPath>C:/Adrian/MojeProgramy/UNITY/Space Invaders/Library/ScriptAssemblies/Unity.Entities.Editor.dll</HintPath>
+      <HintPath>C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Library/ScriptAssemblies/Unity.Entities.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Properties">
-      <HintPath>C:/Adrian/MojeProgramy/UNITY/Space Invaders/Library/ScriptAssemblies/Unity.Properties.dll</HintPath>
+      <HintPath>C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Library/ScriptAssemblies/Unity.Properties.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Collections">
-      <HintPath>C:/Adrian/MojeProgramy/UNITY/Space Invaders/Library/ScriptAssemblies/Unity.Collections.dll</HintPath>
+      <HintPath>C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Library/ScriptAssemblies/Unity.Collections.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>C:/Adrian/MojeProgramy/UNITY/Space Invaders/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Adrian/MojeProgramy/UNITY/Space Invaders/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst">
-      <HintPath>C:/Adrian/MojeProgramy/UNITY/Space Invaders/Library/ScriptAssemblies/Unity.Burst.dll</HintPath>
+      <HintPath>C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Library/ScriptAssemblies/Unity.Burst.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Adrian/MojeProgramy/UNITY/Space Invaders/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rendering.Hybrid">
-      <HintPath>C:/Adrian/MojeProgramy/UNITY/Space Invaders/Library/ScriptAssemblies/Unity.Rendering.Hybrid.dll</HintPath>
+      <HintPath>C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Library/ScriptAssemblies/Unity.Rendering.Hybrid.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Properties.Editor">
-      <HintPath>C:/Adrian/MojeProgramy/UNITY/Space Invaders/Library/ScriptAssemblies/Unity.Properties.Editor.dll</HintPath>
+      <HintPath>C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Library/ScriptAssemblies/Unity.Properties.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Entities.Hybrid">
-      <HintPath>C:/Adrian/MojeProgramy/UNITY/Space Invaders/Library/ScriptAssemblies/Unity.Entities.Hybrid.dll</HintPath>
+      <HintPath>C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Library/ScriptAssemblies/Unity.Entities.Hybrid.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics">
-      <HintPath>C:/Adrian/MojeProgramy/UNITY/Space Invaders/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
+      <HintPath>C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Entities">
-      <HintPath>C:/Adrian/MojeProgramy/UNITY/Space Invaders/Library/ScriptAssemblies/Unity.Entities.dll</HintPath>
+      <HintPath>C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Library/ScriptAssemblies/Unity.Entities.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Transforms">
-      <HintPath>C:/Adrian/MojeProgramy/UNITY/Space Invaders/Library/ScriptAssemblies/Unity.Transforms.dll</HintPath>
+      <HintPath>C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Library/ScriptAssemblies/Unity.Transforms.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Editor">
-      <HintPath>C:/Adrian/MojeProgramy/UNITY/Space Invaders/Library/ScriptAssemblies/Unity.Burst.Editor.dll</HintPath>
+      <HintPath>C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Library/ScriptAssemblies/Unity.Burst.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Adrian/MojeProgramy/UNITY/Space Invaders/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Transforms.Hybrid">
-      <HintPath>C:/Adrian/MojeProgramy/UNITY/Space Invaders/Library/ScriptAssemblies/Unity.Transforms.Hybrid.dll</HintPath>
+      <HintPath>C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Library/ScriptAssemblies/Unity.Transforms.Hybrid.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Adrian/Programowanie/Programy/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

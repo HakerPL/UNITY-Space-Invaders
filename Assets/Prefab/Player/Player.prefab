@@ -26,6 +26,8 @@ GameObject:
   - component: {fileID: 114848412126250452}
   - component: {fileID: 114604560389324344}
   - component: {fileID: 114328302079960468}
+  - component: {fileID: 114733330886005956}
+  - component: {fileID: 114971600369884402}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -280,8 +282,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 851d001b1423ca5408e0c116b0540386, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AllowShoot: 1
+  StartShootTime: 0
   TimeBetwenShoot: 0.5
   SpawnBullet: {fileID: 4314016469772672}
+--- !u!114 &114733330886005956
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1144796386750706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5102d465177bd5548a9f3121e6b71ddd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114848412126250452
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -294,6 +309,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 12
+--- !u!114 &114971600369884402
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1144796386750706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 098aa062ef6f682418688da70d924286, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212144077882851384
 SpriteRenderer:
   m_ObjectHideFlags: 1

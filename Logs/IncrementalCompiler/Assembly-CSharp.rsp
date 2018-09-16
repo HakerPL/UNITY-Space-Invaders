@@ -2,7 +2,7 @@
 -target:library
 -nowarn:0169
 -langversion:7
--out:"C:/Adrian/MojeProgramy/UNITY/Space Invaders/Temp/Assembly-CSharp.dll"
+-out:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Temp/Assembly-CSharp.dll
 -nostdlib
 -unsafe
 -r:C:\Adrian\Programowanie\Programy\Editor\Data\Managed/UnityEngine/UnityEngine.dll
@@ -67,26 +67,26 @@
 -r:C:\Adrian\Programowanie\Programy\Editor\Data\Managed/UnityEngine/UnityEngine.XRModule.dll
 -r:C:\Adrian\Programowanie\Programy\Editor\Data\Managed/UnityEditor.dll
 -r:C:\Adrian\Programowanie\Programy\Editor\Data\Managed/Unity.Locator.dll
--r:"C:/Adrian/MojeProgramy/UNITY/Space Invaders/Library/ScriptAssemblies/Unity.Entities.Properties.dll"
--r:"C:/Adrian/MojeProgramy/UNITY/Space Invaders/Library/ScriptAssemblies/Unity.Properties.Codegen.dll"
--r:"C:/Adrian/MojeProgramy/UNITY/Space Invaders/Library/ScriptAssemblies/Unity.Jobs.dll"
--r:"C:/Adrian/MojeProgramy/UNITY/Space Invaders/Library/ScriptAssemblies/Unity.Jobs.Editor.dll"
--r:"C:/Adrian/MojeProgramy/UNITY/Space Invaders/Library/ScriptAssemblies/Unity.Entities.Editor.dll"
--r:"C:/Adrian/MojeProgramy/UNITY/Space Invaders/Library/ScriptAssemblies/Unity.Properties.dll"
--r:"C:/Adrian/MojeProgramy/UNITY/Space Invaders/Library/ScriptAssemblies/Unity.Collections.dll"
--r:"C:/Adrian/MojeProgramy/UNITY/Space Invaders/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll"
--r:"C:/Adrian/MojeProgramy/UNITY/Space Invaders/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll"
--r:"C:/Adrian/MojeProgramy/UNITY/Space Invaders/Library/ScriptAssemblies/Unity.Burst.dll"
--r:"C:/Adrian/MojeProgramy/UNITY/Space Invaders/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll"
--r:"C:/Adrian/MojeProgramy/UNITY/Space Invaders/Library/ScriptAssemblies/Unity.Rendering.Hybrid.dll"
--r:"C:/Adrian/MojeProgramy/UNITY/Space Invaders/Library/ScriptAssemblies/Unity.Properties.Editor.dll"
--r:"C:/Adrian/MojeProgramy/UNITY/Space Invaders/Library/ScriptAssemblies/Unity.Entities.Hybrid.dll"
--r:"C:/Adrian/MojeProgramy/UNITY/Space Invaders/Library/ScriptAssemblies/Unity.Mathematics.dll"
--r:"C:/Adrian/MojeProgramy/UNITY/Space Invaders/Library/ScriptAssemblies/Unity.Entities.dll"
--r:"C:/Adrian/MojeProgramy/UNITY/Space Invaders/Library/ScriptAssemblies/Unity.Transforms.dll"
--r:"C:/Adrian/MojeProgramy/UNITY/Space Invaders/Library/ScriptAssemblies/Unity.Burst.Editor.dll"
--r:"C:/Adrian/MojeProgramy/UNITY/Space Invaders/Library/ScriptAssemblies/Unity.TextMeshPro.dll"
--r:"C:/Adrian/MojeProgramy/UNITY/Space Invaders/Library/ScriptAssemblies/Unity.Transforms.Hybrid.dll"
+-r:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Library/ScriptAssemblies/Unity.Entities.Properties.dll
+-r:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Library/ScriptAssemblies/Unity.Properties.Codegen.dll
+-r:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Library/ScriptAssemblies/Unity.Jobs.dll
+-r:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Library/ScriptAssemblies/Unity.Jobs.Editor.dll
+-r:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Library/ScriptAssemblies/Unity.Entities.Editor.dll
+-r:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Library/ScriptAssemblies/Unity.Properties.dll
+-r:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Library/ScriptAssemblies/Unity.Collections.dll
+-r:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll
+-r:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll
+-r:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Library/ScriptAssemblies/Unity.Burst.dll
+-r:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll
+-r:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Library/ScriptAssemblies/Unity.Rendering.Hybrid.dll
+-r:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Library/ScriptAssemblies/Unity.Properties.Editor.dll
+-r:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Library/ScriptAssemblies/Unity.Entities.Hybrid.dll
+-r:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Library/ScriptAssemblies/Unity.Mathematics.dll
+-r:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Library/ScriptAssemblies/Unity.Entities.dll
+-r:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Library/ScriptAssemblies/Unity.Transforms.dll
+-r:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Library/ScriptAssemblies/Unity.Burst.Editor.dll
+-r:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Library/ScriptAssemblies/Unity.TextMeshPro.dll
+-r:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Library/ScriptAssemblies/Unity.Transforms.Hybrid.dll
 -r:C:/Adrian/Programowanie/Programy/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll
 -r:C:/Adrian/Programowanie/Programy/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll
 -r:C:/Adrian/Programowanie/Programy/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll
@@ -308,19 +308,21 @@
 -d:ENABLE_BURST_AOT
 -d:UNITY_TEAM_LICENSE
 -d:ENABLE_VSTU
--i:"C:/Adrian/MojeProgramy/UNITY/Space Invaders/Assets/Scripts/ButtonManager.cs"
--i:"C:/Adrian/MojeProgramy/UNITY/Space Invaders/Assets/Scripts/DestroyObject.cs"
--i:"C:/Adrian/MojeProgramy/UNITY/Space Invaders/Assets/Scripts/DestroyShields.cs"
--i:"C:/Adrian/MojeProgramy/UNITY/Space Invaders/Assets/Scripts/EnemyCollision.cs"
--i:"C:/Adrian/MojeProgramy/UNITY/Space Invaders/Assets/Scripts/HybridECS/Bullet/BulletMoveSystem.cs"
--i:"C:/Adrian/MojeProgramy/UNITY/Space Invaders/Assets/Scripts/HybridECS/Bullet/BulletShot.cs"
--i:"C:/Adrian/MojeProgramy/UNITY/Space Invaders/Assets/Scripts/HybridECS/Bullet/BulletSpeed.cs"
--i:"C:/Adrian/MojeProgramy/UNITY/Space Invaders/Assets/Scripts/HybridECS/EnemyShoot/EnemyShoot.cs"
--i:"C:/Adrian/MojeProgramy/UNITY/Space Invaders/Assets/Scripts/HybridECS/EnemyShoot/EnemyShootSytem.cs"
--i:"C:/Adrian/MojeProgramy/UNITY/Space Invaders/Assets/Scripts/HybridECS/PlayerMove/PlayerSpeed.cs"
--i:"C:/Adrian/MojeProgramy/UNITY/Space Invaders/Assets/Scripts/HybridECS/PlayerMove/PlayerSpeedSystem.cs"
--i:"C:/Adrian/MojeProgramy/UNITY/Space Invaders/Assets/Scripts/HybridECS/PlayerShoot/PlayerShoot.cs"
--i:"C:/Adrian/MojeProgramy/UNITY/Space Invaders/Assets/Scripts/HybridECS/PlayerShoot/PlayerShootSystem.cs"
--i:"C:/Adrian/MojeProgramy/UNITY/Space Invaders/Assets/Scripts/PlayerLife.cs"
--i:"C:/Adrian/MojeProgramy/UNITY/Space Invaders/Assets/Scripts/ShieldLife.cs"
+-i:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Assets/Scripts/Bullet/BulletMove.cs
+-i:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Assets/Scripts/ButtonManager.cs
+-i:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Assets/Scripts/DestroyObject.cs
+-i:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Assets/Scripts/DestroyShields.cs
+-i:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Assets/Scripts/EnemyCollision.cs
+-i:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Assets/Scripts/EnemyShoot/EnemyShoot.cs
+-i:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Assets/Scripts/example.cs
+-i:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Assets/Scripts/GameControler/GameControler.cs
+-i:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Assets/Scripts/GameControler/PlayerSpawn.cs
+-i:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Assets/Scripts/HybridECS/PlayerMove/PlayerSpeed.cs
+-i:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Assets/Scripts/HybridECS/PlayerMove/PlayerSpeedSystem.cs
+-i:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Assets/Scripts/HybridECS/PlayerShoot/PlayerShoot.cs
+-i:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Assets/Scripts/HybridECS/PlayerShoot/PlayerShootSystem.cs
+-i:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Assets/Scripts/Player/PlayerDead.cs
+-i:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Assets/Scripts/Player/PlayerLife.cs
+-i:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Assets/Scripts/ShieldLife.cs
+-i:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Assets/SpawnLifes.cs
 -v:0

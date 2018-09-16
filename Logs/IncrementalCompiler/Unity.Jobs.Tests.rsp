@@ -2,12 +2,12 @@
 -target:library
 -nowarn:0169
 -langversion:7
--out:"C:/Adrian/MojeProgramy/UNITY/Space Invaders/Temp/Unity.Jobs.Tests.dll"
+-out:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Temp/Unity.Jobs.Tests.dll
 -nostdlib
 -unsafe
--r:"C:/Adrian/MojeProgramy/UNITY/Space Invaders/Library/ScriptAssemblies/Unity.Jobs.dll"
--r:"C:/Adrian/MojeProgramy/UNITY/Space Invaders/Library/ScriptAssemblies/Unity.Collections.dll"
--r:"C:/Adrian/MojeProgramy/UNITY/Space Invaders/Library/ScriptAssemblies/Unity.Mathematics.dll"
+-r:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Library/ScriptAssemblies/Unity.Jobs.dll
+-r:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Library/ScriptAssemblies/Unity.Collections.dll
+-r:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Library/ScriptAssemblies/Unity.Mathematics.dll
 -r:C:\Adrian\Programowanie\Programy\Editor\Data\Managed/UnityEngine/UnityEngine.dll
 -r:C:\Adrian\Programowanie\Programy\Editor\Data\Managed/UnityEngine/UnityEngine.AIModule.dll
 -r:C:\Adrian\Programowanie\Programy\Editor\Data\Managed/UnityEngine/UnityEngine.ARModule.dll
