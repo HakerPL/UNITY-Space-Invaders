@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using static GameControler;
 
 namespace Assets.Scripts.GameControler
 {
@@ -7,21 +8,41 @@ namespace Assets.Scripts.GameControler
         private GameObject _playerPrefab;
         private Transform _playerStartPosition;
 
+        private GameObject _playerInstance;
+
         public PlayerSpawn(GameObject PlayerPrefab, Transform PlayerStartPosition)
         {
             _playerPrefab = PlayerPrefab;
             _playerStartPosition = PlayerStartPosition;
         }
 
-        public void SpawnPlayer(PlayerDead.OnPlayerDead onPlayerDead)
+        public PlayerSpawn SetPlayerDeadEvent(PlayerDead.OnPlayerDead onPlayerDead)
         {
-            var instance = MonoBehaviour.Instantiate(_playerPrefab, _playerStartPosition.position, _playerStartPosition.rotation);
-            var componentPlayerDead = instance.GetComponent<PlayerDead>();
+            var componentPlayerDead = _playerInstance.GetComponent<PlayerDead>();
 
             if (componentPlayerDead == null)
-                return;
+                return this;
 
             componentPlayerDead.OnPlayerDeadEvent += onPlayerDead;
+
+            return this;
+        }
+
+        public SetShootStatus GetShootStatusEvent()
+        {
+            var componentPlayerShoot = _playerInstance.GetComponent<PlayerShoot>();
+
+            if (componentPlayerShoot == null)
+                return null;
+
+            return componentPlayerShoot.SetShootStatus;
+        }
+
+        public PlayerSpawn SpawnPlayer()
+        {
+            _playerInstance = MonoBehaviour.Instantiate(_playerPrefab, _playerStartPosition.position, _playerStartPosition.rotation);
+
+            return this;
         }
     }
 }

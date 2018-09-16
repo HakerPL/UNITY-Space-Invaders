@@ -60,23 +60,24 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\DestroyBullet.cs" />
     <Compile Include="Assets\Scripts\Bullet\BulletMove.cs" />
     <Compile Include="Assets\Scripts\ButtonManager.cs" />
-    <Compile Include="Assets\Scripts\DestroyObject.cs" />
     <Compile Include="Assets\Scripts\DestroyShields.cs" />
-    <Compile Include="Assets\Scripts\EnemyCollision.cs" />
-    <Compile Include="Assets\Scripts\EnemyShoot\EnemyShoot.cs" />
-    <Compile Include="Assets\Scripts\example.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyDeath.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyMove.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyShoot.cs" />
+    <Compile Include="Assets\Scripts\GameControler\EnemyControler.cs" />
     <Compile Include="Assets\Scripts\GameControler\GameControler.cs" />
     <Compile Include="Assets\Scripts\GameControler\PlayerSpawn.cs" />
     <Compile Include="Assets\Scripts\HybridECS\PlayerMove\PlayerSpeed.cs" />
     <Compile Include="Assets\Scripts\HybridECS\PlayerMove\PlayerSpeedSystem.cs" />
-    <Compile Include="Assets\Scripts\HybridECS\PlayerShoot\PlayerShoot.cs" />
-    <Compile Include="Assets\Scripts\HybridECS\PlayerShoot\PlayerShootSystem.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerDead.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerLife.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerShoot.cs" />
     <Compile Include="Assets\Scripts\ShieldLife.cs" />
     <Compile Include="Assets\SpawnLifes.cs" />
+    <Compile Include="Assets\WallReflect.cs" />
     <Reference Include="Unity.Entities.Properties">
       <HintPath>C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Library/ScriptAssemblies/Unity.Entities.Properties.dll</HintPath>
     </Reference>

@@ -24,10 +24,9 @@ GameObject:
   - component: {fileID: 50950381214750704}
   - component: {fileID: 82369498733020636}
   - component: {fileID: 114848412126250452}
-  - component: {fileID: 114604560389324344}
-  - component: {fileID: 114328302079960468}
   - component: {fileID: 114733330886005956}
   - component: {fileID: 114971600369884402}
+  - component: {fileID: 114459702610637136}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -86,7 +85,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1144796386750706}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4.22, z: 0}
+  m_LocalPosition: {x: -3.3220644, y: -0.18905199, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4743347385972994}
@@ -258,7 +257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bf10cdea1344482e91a4f2b58506b77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114328302079960468
+--- !u!114 &114459702610637136
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -266,26 +265,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1144796386750706}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f79d39c7d88bc074e8c38a9243cea624, type: 3}
+  m_Script: {fileID: 11500000, guid: 967003632f2538f4aa28ed73610271ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AllowShoot: 0
+  StartShootTime: 3
+  TimeBetwenShoot: 3
+  SpawnBullet: {fileID: 4314016469772672}
   BulletPrefab: {fileID: 1310846008358022, guid: 13731b5fbcc188747a47b3d6771e6227,
     type: 2}
---- !u!114 &114604560389324344
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1144796386750706}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 851d001b1423ca5408e0c116b0540386, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AllowShoot: 1
-  StartShootTime: 0
-  TimeBetwenShoot: 0.5
-  SpawnBullet: {fileID: 4314016469772672}
 --- !u!114 &114733330886005956
 MonoBehaviour:
   m_ObjectHideFlags: 1

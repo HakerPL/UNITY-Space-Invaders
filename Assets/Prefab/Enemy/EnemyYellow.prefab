@@ -19,8 +19,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4644141967984952}
-  - component: {fileID: 114817474503138310}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +35,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4369967405378122}
   - component: {fileID: 212277295248689068}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,14 +50,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4425870054051548}
-  - component: {fileID: 114997728692384478}
   - component: {fileID: 61865900786069994}
   - component: {fileID: 50344631928536370}
   - component: {fileID: 82279876506516712}
-  - component: {fileID: 114899368091553216}
-  - component: {fileID: 114957439868623420}
-  - component: {fileID: 114595349737696220}
-  m_Layer: 0
+  - component: {fileID: 114714088812411522}
+  - component: {fileID: 114467130262509394}
+  - component: {fileID: 114697942071100058}
+  m_Layer: 8
   m_Name: EnemyYellow
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -149,7 +147,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.7, y: 1}
   m_EdgeRadius: 0
 --- !u!82 &82279876506516712
 AudioSource:
@@ -246,7 +244,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &114595349737696220
+--- !u!114 &114467130262509394
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -254,38 +252,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1836237092411162}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96e67a1fdd0afda4d899b35db9ed0e2c, type: 3}
+  m_Script: {fileID: 11500000, guid: 458d390d6bb83de4f9d3a0395aaea974, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AllowShoot: 1
-  StartShootTime: 0
-  TimeBetwenShoot: 1
-  SpawnBullet: {fileID: 4644141967984952}
---- !u!114 &114817474503138310
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1088733123017502}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bf10cdea1344482e91a4f2b58506b77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114899368091553216
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1836237092411162}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f79d39c7d88bc074e8c38a9243cea624, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BulletPrefab: {fileID: 1645239920012378, guid: fbbfecad87078384ea8d345a08a74747,
-    type: 2}
---- !u!114 &114957439868623420
+  Speed: 2
+--- !u!114 &114697942071100058
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -296,10 +267,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e36ab0acee08914a8d5f56e988063ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeLiveEffectDestroy: 0.5
+  TimeLiveEffectDestroy: 1
   EffectPrefab: {fileID: 1446929744564900, guid: e4e1c9d70c1d6c242918d9b5cca11ace,
     type: 2}
---- !u!114 &114997728692384478
+--- !u!114 &114714088812411522
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -307,9 +278,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1836237092411162}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bf10cdea1344482e91a4f2b58506b77, type: 3}
+  m_Script: {fileID: 11500000, guid: 96e67a1fdd0afda4d899b35db9ed0e2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AllowShoot: 0
+  StartShootBetwen:
+    x: 2
+    y: 6
+  TimeBetwenShoot: 3
+  SpawnBullet: {fileID: 4644141967984952}
+  BulletPrefab: {fileID: 1645239920012378, guid: fbbfecad87078384ea8d345a08a74747,
+    type: 2}
 --- !u!212 &212277295248689068
 SpriteRenderer:
   m_ObjectHideFlags: 1

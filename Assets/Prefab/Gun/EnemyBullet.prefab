@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 61188035541819374}
   m_Layer: 0
   m_Name: Sprite
-  m_TagString: EnemyBullet
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38,10 +38,9 @@ GameObject:
   - component: {fileID: 4832053074995856}
   - component: {fileID: 50544671945541928}
   - component: {fileID: 114141243070844202}
-  - component: {fileID: 114563223683439308}
   m_Layer: 0
   m_Name: EnemyBullet
-  m_TagString: EnemyBullet
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130,18 +129,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 10
---- !u!114 &114563223683439308
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1645239920012378}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69a67df1aae211d45ba910fc23bd93b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LiveTime: 2
 --- !u!212 &212926590639271382
 SpriteRenderer:
   m_ObjectHideFlags: 1
