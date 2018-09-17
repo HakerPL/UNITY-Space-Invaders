@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameControler : MonoBehaviour
 {
@@ -23,15 +24,23 @@ public class GameControler : MonoBehaviour
     public float2 StartShootBetwen;
     public float TimeBetwenShoot;
     public float MoveSpeed;
+    public float MoveDownSpeed;
     public float SpeedAddWhenDead;
     public float HowManyDeathsIncreaseSpeed;
 
     private int _enemyCount;
+    private int _deadEnemy;
 
     public delegate void SetShootStatus(bool status);
     public event SetShootStatus SetShootStatusEvent;
 
-    private EnemyControler _spawnEnemys;
+    private EnemyControler _enemyCotroler;
+    [Space(10)]
+
+    [Header("Point")]
+    public Text PointObject;
+    private int _point;
+    private PointControler _pointControler;
 
     // Use this for initialization
     void Start()
@@ -42,7 +51,10 @@ public class GameControler : MonoBehaviour
         _playerSpawn.SpawnPlayer()
                     .SetPlayerDeadEvent(OnPlayerDead);
 
-        _spawnEnemys = new EnemyControler();
+        _enemyCotroler = new EnemyControler();
+        _point = 0;
+        _pointControler = new PointControler(PointObject);
+        _pointControler.UpdatePoint(_point);
 
         GetPlayerShootStatus();
 
@@ -58,7 +70,7 @@ public class GameControler : MonoBehaviour
 
     private void GetAllEnemyShootStatus()
     {
-        foreach (EnemyShoot shootEnemyScript in _spawnEnemys.GetAllEnemyShoot())
+        foreach (EnemyShoot shootEnemyScript in _enemyCotroler.GetAllEnemyShoot())
             SetShootStatusEvent += shootEnemyScript.SetShootStatys;
     }
 
@@ -91,39 +103,49 @@ public class GameControler : MonoBehaviour
 
     private IEnumerator EnemySpawnAnimation()
     {
-        _spawnEnemys.CreateEnemys(EnemysPrefab)
+        _deadEnemy = 0;
+        _enemyCotroler.CreateEnemys(EnemysPrefab)
                     .SetOnDeatEvent(OnEnemyDead)
                     .SetEnemyStartShootBetwen(StartShootBetwen)
-                    .SetEnemyTimeBetwenShoot(TimeBetwenShoot);
+                    .SetEnemyTimeBetwenShoot(TimeBetwenShoot)
+                    .AddSpeedEnemy(MoveSpeed)
+                    .SetMoveDownSpeed(MoveDownSpeed);
 
         GetAllEnemyShootStatus();
-        _enemyCount = _spawnEnemys.GetCountEnemy();
+        _enemyCount = _enemyCotroler.GetCountEnemy();
 
         SetShootStatusEvent(false);
-        _spawnEnemys.TurnMoveScript(false);
+        _enemyCotroler.TurnMoveScript(false);
 
         yield return new WaitForSeconds(1f);
 
-        while (_spawnEnemys.GetStatusMoveEnemy())
+        while (_enemyCotroler.GetStatusMoveEnemy())
         {
-            _spawnEnemys.MoveToStartPosition();
+            _enemyCotroler.MoveToStartPosition();
             yield return 0;
         }
 
         yield return new WaitForSeconds(1f);
-        _spawnEnemys.TurnMoveScript(true);
+        _enemyCotroler.TurnMoveScript(true);
         SetShootStatusEvent(true);
     }
 
-    private void OnEnemyDead(int Points)
+    private void OnEnemyDead(int points)
     {
         if (_enemyCount == 0)
             return;
 
         _enemyCount--;
 
-        if(_enemyCount == 0)
+        _point += points;
+        _pointControler.UpdatePoint(_point);
+
+        _deadEnemy++;
+
+        if (_enemyCount == 0)
             StartCoroutine(EnemySpawnAnimation());
+        else if (_deadEnemy % HowManyDeathsIncreaseSpeed == 0)
+            _enemyCotroler.AddSpeedEnemy(SpeedAddWhenDead);
     }
 
     private void LifeSpawn()

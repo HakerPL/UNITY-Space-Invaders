@@ -64,12 +64,14 @@
     <Compile Include="Assets\Scripts\Bullet\BulletMove.cs" />
     <Compile Include="Assets\Scripts\ButtonManager.cs" />
     <Compile Include="Assets\Scripts\DestroyShields.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyColliderWall.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyDeath.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyMove.cs" />
     <Compile Include="Assets\Scripts\Enemy\EnemyShoot.cs" />
     <Compile Include="Assets\Scripts\GameControler\EnemyControler.cs" />
     <Compile Include="Assets\Scripts\GameControler\GameControler.cs" />
     <Compile Include="Assets\Scripts\GameControler\PlayerSpawn.cs" />
+    <Compile Include="Assets\Scripts\GameControler\PointControler.cs" />
     <Compile Include="Assets\Scripts\HybridECS\PlayerMove\PlayerSpeed.cs" />
     <Compile Include="Assets\Scripts\HybridECS\PlayerMove\PlayerSpeedSystem.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerDead.cs" />

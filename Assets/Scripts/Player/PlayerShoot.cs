@@ -29,7 +29,7 @@ public class PlayerShoot : MonoBehaviour
 
         if (Input.GetKeyDown("space") && _lastShootTime < Time.time)
         {
-            Instantiate(BulletPrefab, SpawnBullet.position, SpawnBullet.rotation);
+            Instantiate(BulletPrefab, SpawnBullet.position, BulletPrefab.transform.rotation);
             _lastShootTime = Time.time + TimeBetwenShoot;
         }
     }

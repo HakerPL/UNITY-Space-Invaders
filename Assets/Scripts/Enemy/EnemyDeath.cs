@@ -11,8 +11,6 @@ public class EnemyDeath : MonoBehaviour
         if (other.tag == "EnemyBullet" || other.tag != "PlayerBullet")
             return;
 
-        //OnEnemyDeadEvent(this);
-
         Destroy(other.gameObject);
         DestroyShip();
     }

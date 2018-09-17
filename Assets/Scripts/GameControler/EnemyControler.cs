@@ -12,17 +12,22 @@ public class EnemyControler : MonoBehaviour
     private GameObject _enemyInstance;
     private Vector3 _startPosition = new Vector3(0, 0, 0);
     List<EnemyShoot> _enemyShootScript;
-    List<EnemyMove> _enemyMoveScript;
+    EnemyMove _enemyMoveScript;
 
     #region Builder
 
     public EnemyControler CreateEnemys(GameObject enemysPrefab)
     {
+        if (_enemyInstance != null)
+            Destroy(_enemyInstance);
+
         _enemyMoveToStartPosition = true;
         _enemyInstance = Instantiate(enemysPrefab);
         GetAllChild(_enemyInstance);
         GetAllChildEnemyShoot();
-        GetAllChildEnemyMove();
+        _enemyMoveScript = _enemyInstance.GetComponent<EnemyMove>();
+        SetChildMoveEvent();
+
         return this;
     }
 
@@ -69,8 +74,7 @@ public class EnemyControler : MonoBehaviour
         if (_enemyMoveScript == null)
             return this;
 
-        foreach (EnemyMove script in _enemyMoveScript)
-            script.Speed = moveSpeed;
+        _enemyMoveScript.Speed = moveSpeed;
 
         return this;
     }
@@ -85,11 +89,6 @@ public class EnemyControler : MonoBehaviour
     public List<EnemyShoot> GetAllEnemyShoot()
     {
         return _enemyShootScript;
-    }
-
-    public List<EnemyMove> GetAllEnemyMove()
-    {
-        return _enemyMoveScript;
     }
 
     public bool GetStatusMoveEnemy()
@@ -107,12 +106,20 @@ public class EnemyControler : MonoBehaviour
 
     public void TurnMoveScript(bool status)
     {
-        foreach (GameObject child in _child)
-        {
-            var moveScript = child.GetComponent<EnemyMove>();
-            if (moveScript != null)
-                moveScript.enabled = status;
-        }
+        if(_enemyMoveScript != null)
+            _enemyMoveScript.enabled = status;
+    }
+
+    public EnemyControler AddSpeedEnemy(float speed)
+    {
+        _enemyMoveScript.Speed += speed;
+        return this;
+    }
+
+    public EnemyControler SetMoveDownSpeed(float moveDownSpeed)
+    {
+        _enemyMoveScript.MoveDownSpeed = moveDownSpeed;
+        return this;
     }
 
     private void GetAllChildEnemyShoot()
@@ -128,16 +135,14 @@ public class EnemyControler : MonoBehaviour
         }
     }
 
-    private void GetAllChildEnemyMove()
+    private void SetChildMoveEvent()
     {
-        _enemyMoveScript = new List<EnemyMove>();
-
         foreach (GameObject child in _child)
         {
-            var script = child.GetComponent<EnemyMove>();
+            var script = child.GetComponent<EnemyColliderWall>();
 
-            if (script != null && !_enemyMoveScript.Contains(script))
-                _enemyMoveScript.Add(script);
+            if (script != null)
+                script.OnEnemyTurnEvent += _enemyMoveScript.Turn;
         }
     }
 

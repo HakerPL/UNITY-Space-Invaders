@@ -312,12 +312,14 @@
 -i:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Assets/Scripts/Bullet/BulletMove.cs
 -i:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Assets/Scripts/ButtonManager.cs
 -i:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Assets/Scripts/DestroyShields.cs
+-i:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Assets/Scripts/Enemy/EnemyColliderWall.cs
 -i:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Assets/Scripts/Enemy/EnemyDeath.cs
 -i:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Assets/Scripts/Enemy/EnemyMove.cs
 -i:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Assets/Scripts/Enemy/EnemyShoot.cs
 -i:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Assets/Scripts/GameControler/EnemyControler.cs
 -i:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Assets/Scripts/GameControler/GameControler.cs
 -i:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Assets/Scripts/GameControler/PlayerSpawn.cs
+-i:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Assets/Scripts/GameControler/PointControler.cs
 -i:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Assets/Scripts/HybridECS/PlayerMove/PlayerSpeed.cs
 -i:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Assets/Scripts/HybridECS/PlayerMove/PlayerSpeedSystem.cs
 -i:C:/Adrian/MojeProgramy/UNITY/UNITY-Space-Invaders/Assets/Scripts/Player/PlayerDead.cs

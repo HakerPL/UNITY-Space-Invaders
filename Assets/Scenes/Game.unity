@@ -579,9 +579,10 @@ MonoBehaviour:
     x: 100
     y: 200
   TimeBetwenShoot: 20
-  MoveSpeed: 1
-  SpeedAddWhenDead: 1
+  MoveSpeed: 2
+  SpeedAddWhenDead: 0.3
   HowManyDeathsIncreaseSpeed: 3
+  PointObject: {fileID: 1560356212}
 --- !u!4 &954541278
 Transform:
   m_ObjectHideFlags: 0

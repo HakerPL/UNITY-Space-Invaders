@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Unity.Mathematics;
+using UnityEngine;
 
 namespace Assets.Scripts.HybridECS.Bullet
 {
@@ -11,9 +12,8 @@ namespace Assets.Scripts.HybridECS.Bullet
         {
             var rigidbody2D = GetComponent<Rigidbody2D>();
             var transform = GetComponent<Transform>();
-
             float force = Speed * Time.deltaTime * 50;
-            rigidbody2D.velocity = transform.forward * force;
+            rigidbody2D.velocity = transform.up * force;
         }
     }
 }

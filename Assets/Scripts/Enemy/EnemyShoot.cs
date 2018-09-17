@@ -39,7 +39,7 @@ public class EnemyShoot : MonoBehaviour
 
         if (_lastShootTime < Time.time)
         {
-            Instantiate(BulletPrefab, SpawnBullet.position, SpawnBullet.rotation);
+            Instantiate(BulletPrefab, SpawnBullet.position, BulletPrefab.transform.rotation);
             _lastShootTime = Time.time + TimeBetwenShoot;
             //enemyShootComponents.SoundEffect.Play();
         }
