@@ -1,14 +1,16 @@
 ﻿using UnityEngine;
 
-public class PlayerLife : MonoBehaviour
+namespace Assets.Scripts.Player
 {
-
-    void OnTriggerEnter2D(Collider2D other)
+    public class PlayerLife : MonoBehaviour
     {
-        if (other.tag != "EnemyBullet")
-            return;
+        void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.tag != "EnemyBullet")
+                return;
 
-        Destroy(other.gameObject);
-        Destroy(gameObject);
+            Destroy(other.gameObject);
+            Destroy(gameObject);
+        }
     }
 }

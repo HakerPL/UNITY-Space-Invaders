@@ -1,19 +1,25 @@
-﻿using UnityEngine;
-using static GameControler;
+﻿using Assets.Scripts.Player;
+using UnityEngine;
+using static Assets.Scripts.GameControler.GameControler;
 
 namespace Assets.Scripts.GameControler
 {
     public class PlayerSpawn
     {
-        private GameObject _playerPrefab;
-        private Transform _playerStartPosition;
+        private readonly GameObject _playerPrefab;
+        private readonly Transform _playerStartPosition;
 
         private GameObject _playerInstance;
 
-        public PlayerSpawn(GameObject PlayerPrefab, Transform PlayerStartPosition)
+        public PlayerSpawn(GameObject playerPrefab, Transform playerStartPosition)
         {
-            _playerPrefab = PlayerPrefab;
-            _playerStartPosition = PlayerStartPosition;
+            _playerPrefab = playerPrefab;
+            _playerStartPosition = playerStartPosition;
+        }
+
+        public void DestroyPlayer()
+        {
+            Object.Destroy(_playerInstance);
         }
 
         public PlayerSpawn SetPlayerDeadEvent(PlayerDead.OnPlayerDead onPlayerDead)
@@ -40,7 +46,7 @@ namespace Assets.Scripts.GameControler
 
         public PlayerSpawn SpawnPlayer()
         {
-            _playerInstance = MonoBehaviour.Instantiate(_playerPrefab, _playerStartPosition.position, _playerStartPosition.rotation);
+            _playerInstance = Object.Instantiate(_playerPrefab, _playerStartPosition.position, _playerStartPosition.rotation);
 
             return this;
         }

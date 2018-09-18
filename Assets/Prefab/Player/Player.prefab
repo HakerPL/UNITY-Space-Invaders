@@ -268,7 +268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 967003632f2538f4aa28ed73610271ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeBetwenShoot: 0
+  TimeBetwenShoot: 2
   SpawnBullet: {fileID: 4314016469772672}
   BulletPrefab: {fileID: 1310846008358022, guid: 13731b5fbcc188747a47b3d6771e6227,
     type: 2}

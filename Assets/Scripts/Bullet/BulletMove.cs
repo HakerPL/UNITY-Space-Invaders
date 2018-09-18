@@ -1,7 +1,6 @@
-﻿using Unity.Mathematics;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Assets.Scripts.HybridECS.Bullet
+namespace Assets.Scripts.Bullet
 {
     [RequireComponent(typeof(Rigidbody2D), typeof(Transform))]
     public class BulletMove : MonoBehaviour
@@ -12,7 +11,7 @@ namespace Assets.Scripts.HybridECS.Bullet
         {
             var rigidbody2D = GetComponent<Rigidbody2D>();
             var transform = GetComponent<Transform>();
-            float force = Speed * Time.deltaTime * 50;
+            var force = Speed * Time.deltaTime * 50;
             rigidbody2D.velocity = transform.up * force;
         }
     }

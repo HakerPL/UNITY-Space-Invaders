@@ -1,159 +1,226 @@
-﻿using Assets.Scripts.GameControler;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
+using Assets.Scripts.Enemy;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class GameControler : MonoBehaviour
+namespace Assets.Scripts.GameControler
 {
-    [Header("Player")]
-    public GameObject PlayerPrefab;
-    public Transform PlayerStartPosition;
-    [Space(10)]
-
-    [Header("PlayerLife")]
-    public int PlayerLife;
-    public SpawnLifes SpawnLifesObject;
-
-    private PlayerSpawn _playerSpawn;
-    [Space(10)]
-
-    [Header("Enemy")]
-    public GameObject EnemysPrefab;
-    public float2 StartShootBetwen;
-    public float TimeBetwenShoot;
-    public float MoveSpeed;
-    public float MoveDownSpeed;
-    public float SpeedAddWhenDead;
-    public float HowManyDeathsIncreaseSpeed;
-
-    private int _enemyCount;
-    private int _deadEnemy;
-
-    public delegate void SetShootStatus(bool status);
-    public event SetShootStatus SetShootStatusEvent;
-
-    private EnemyControler _enemyCotroler;
-    [Space(10)]
-
-    [Header("Point")]
-    public Text PointObject;
-    private int _point;
-    private PointControler _pointControler;
-
-    // Use this for initialization
-    void Start()
+    [RequireComponent(typeof(GuiControler))]
+    public class GameControler : MonoBehaviour
     {
-        LifeSpawn();
+        [Header("Player")]
+        public GameObject PlayerPrefab;
+        public Transform PlayerStartPosition;
+        [Space(10)]
 
-        _playerSpawn = new PlayerSpawn(PlayerPrefab, PlayerStartPosition);
-        _playerSpawn.SpawnPlayer()
-                    .SetPlayerDeadEvent(OnPlayerDead);
+        [Header("PlayerLife")]
+        public int PlayerLife;
+        public SpawnLifes SpawnLifesObject;
 
-        _enemyCotroler = new EnemyControler();
-        _point = 0;
-        _pointControler = new PointControler(PointObject);
-        _pointControler.UpdatePoint(_point);
+        private PlayerSpawn _playerSpawn;
+        [Space(10)]
 
-        GetPlayerShootStatus();
+        [Header("Enemy")]
+        public GameObject EnemysPrefab;
+        public float2 StartShootBetwen;
+        public float TimeBetwenShoot;
+        public float MoveSpeed;
+        public float MoveDownSpeed;
+        public float SpeedAddWhenDead;
+        public float HowManyDeathsIncreaseSpeed;
 
-        StartCoroutine(EnemySpawnAnimation());
-    }
+        private int _enemyCount;
+        private int _deadEnemy;
 
-    private void GetPlayerShootStatus()
-    {
-        var shootScript = _playerSpawn.GetShootStatusEvent();
-        if (shootScript != null)
-            SetShootStatusEvent += shootScript;
-    }
+        public delegate void SetShootStatus(bool status);
+        public event SetShootStatus SetShootStatusEvent;
 
-    private void GetAllEnemyShootStatus()
-    {
-        foreach (EnemyShoot shootEnemyScript in _enemyCotroler.GetAllEnemyShoot())
-            SetShootStatusEvent += shootEnemyScript.SetShootStatys;
-    }
+        private EnemyControler _enemyCotroler;
+        [Space(10)]
 
-    private void OnPlayerDead()
-    {
-        if (SetShootStatusEvent != null)
-            SetShootStatusEvent -= _playerSpawn.GetShootStatusEvent();
+        [Header("Point")]
+        public Text PointObject;
+        private int _point;
+        private PointControler _pointControler;
+        [Space(10)]
 
-        SetShootStatusEvent(false);
+        [Header("GameOverWall")]
+        public GameObject EndGameWall;
 
-        SpawnLifesObject.DestroyLife();
-
-        if (SpawnLifesObject.GetCountLifes() == 0)
+        private GuiControler _guiControler;
+        // Use this for initialization
+        void Start()
         {
-            SceneManager.LoadScene("Menu");
-            return;
+            _guiControler = GetComponent<GuiControler>();
+
+            LifeSpawn();
+
+            var wall = EndGameWall.GetComponent<GameOverWall>();
+            if (wall != null)
+                wall.OnEnemyEnterEvent += GameOver;
+
+            _playerSpawn = new PlayerSpawn(PlayerPrefab, PlayerStartPosition);
+            _playerSpawn.SpawnPlayer()
+                .SetPlayerDeadEvent(OnPlayerDead);
+
+            _enemyCotroler = new EnemyControler();
+            _point = 0;
+            _pointControler = new PointControler(PointObject);
+            _pointControler.UpdatePoint(_point);
+
+            GetPlayerShootStatus();
+
+            StartCoroutine(StartGame());
         }
 
-        StartCoroutine(PlayerDead());
-    }
-
-    private IEnumerator PlayerDead()
-    {
-        yield return new WaitForSeconds(2f);
-
-        _playerSpawn.SpawnPlayer()
-                    .SetPlayerDeadEvent(OnPlayerDead);
-
-        SetShootStatusEvent += _playerSpawn.GetShootStatusEvent();
-
-        SetShootStatusEvent(true);
-    }
-
-    private IEnumerator EnemySpawnAnimation()
-    {
-        _deadEnemy = 0;
-        _enemyCotroler.CreateEnemys(EnemysPrefab)
-                    .SetOnDeatEvent(OnEnemyDead)
-                    .SetEnemyStartShootBetwen(StartShootBetwen)
-                    .SetEnemyTimeBetwenShoot(TimeBetwenShoot)
-                    .AddSpeedEnemy(MoveSpeed)
-                    .SetMoveDownSpeed(MoveDownSpeed);
-
-        GetAllEnemyShootStatus();
-        _enemyCount = _enemyCotroler.GetCountEnemy();
-
-        SetShootStatusEvent(false);
-        _enemyCotroler.TurnMoveScript(false);
-
-        yield return new WaitForSeconds(1f);
-
-        while (_enemyCotroler.GetStatusMoveEnemy())
+        private void GetPlayerShootStatus()
         {
-            _enemyCotroler.MoveToStartPosition();
-            yield return 0;
+            var shootScript = _playerSpawn.GetShootStatusEvent();
+            if (shootScript != null)
+                SetShootStatusEvent += shootScript;
         }
 
-        yield return new WaitForSeconds(1f);
-        _enemyCotroler.TurnMoveScript(true);
-        SetShootStatusEvent(true);
-    }
+        private IEnumerator StartGame()
+        {
+            if (_guiControler != null)
+                StartCoroutine(_guiControler.ShowStart());
 
-    private void OnEnemyDead(int points)
-    {
-        if (_enemyCount == 0)
-            return;
+            if (_guiControler != null)
+            {
+                while (_guiControler.IsShow)
+                {
+                    yield return 0;
+                }
+            }
 
-        _enemyCount--;
-
-        _point += points;
-        _pointControler.UpdatePoint(_point);
-
-        _deadEnemy++;
-
-        if (_enemyCount == 0)
             StartCoroutine(EnemySpawnAnimation());
-        else if (_deadEnemy % HowManyDeathsIncreaseSpeed == 0)
-            _enemyCotroler.AddSpeedEnemy(SpeedAddWhenDead);
-    }
+        }
 
-    private void LifeSpawn()
-    {
-        SpawnLifesObject.Spawn(PlayerLife);
+        private void GetAllEnemyShootStatus()
+        {
+            foreach (EnemyShoot shootEnemyScript in _enemyCotroler.GetAllEnemyShoot())
+                SetShootStatusEvent += shootEnemyScript.SetShootStatys;
+        }
+
+        private void OnPlayerDead()
+        {
+            if (SetShootStatusEvent != null)
+                SetShootStatusEvent -= _playerSpawn.GetShootStatusEvent();
+
+            TurnOffScripts(false);
+
+            SpawnLifesObject.DestroyLife();
+
+            StartCoroutine(PlayerDead());
+        }
+
+        private IEnumerator PlayerDead()
+        {
+            if (_guiControler != null)
+            {
+                if (SpawnLifesObject.GetCountLifes() == 0)
+                {
+                    GameOver();
+                    yield break;
+                }
+                else
+                {
+                    StartCoroutine(_guiControler.ShowDead());
+                    while (_guiControler.IsShow)
+                    {
+                        yield return 0;
+                    }
+                }
+            }
+
+            _playerSpawn.SpawnPlayer()
+                .SetPlayerDeadEvent(OnPlayerDead);
+
+            SetShootStatusEvent += _playerSpawn.GetShootStatusEvent();
+
+            TurnOffScripts(true);
+        }
+
+        private IEnumerator EnemySpawnAnimation()
+        {
+            _deadEnemy = 0;
+            _enemyCotroler.CreateEnemys(EnemysPrefab)
+                .SetOnDeatEvent(OnEnemyDead)
+                .SetEnemyStartShootBetwen(StartShootBetwen)
+                .SetEnemyTimeBetwenShoot(TimeBetwenShoot)
+                .SetStartEnemyMoveSpeed(MoveSpeed)
+                .SetMoveDownSpeed(MoveDownSpeed);
+
+            GetAllEnemyShootStatus();
+            _enemyCount = _enemyCotroler.GetCountEnemy();
+
+            TurnOffScripts(false);
+
+            if (_guiControler != null)
+            {
+                StartCoroutine(_guiControler.ShowNewWave());
+                while (_guiControler.IsShow)
+                {
+                    yield return 0;
+                }
+            }
+
+            while (_enemyCotroler.GetStatusMoveEnemy())
+            {
+                _enemyCotroler.MoveToStartPosition();
+                yield return 0;
+            }
+
+            TurnOffScripts(true);
+        }
+
+        private void OnEnemyDead(int points)
+        {
+            if (_enemyCount == 0)
+                return;
+
+            _enemyCount--;
+
+            _point += points;
+            _pointControler.UpdatePoint(_point);
+
+            _deadEnemy++;
+
+            if (_enemyCount == 0)
+                StartCoroutine(EnemySpawnAnimation());
+            else if (_deadEnemy % HowManyDeathsIncreaseSpeed == 0)
+                _enemyCotroler.AddSpeedEnemy(SpeedAddWhenDead);
+        }
+
+        private void LifeSpawn()
+        {
+            SpawnLifesObject.Spawn(PlayerLife);
+        }
+
+        private void GameOver()
+        {
+            TurnOffScripts(false);
+            _playerSpawn.DestroyPlayer();
+            StartCoroutine(GameOverCoroutine());
+        }
+
+        private IEnumerator GameOverCoroutine()
+        {
+            StartCoroutine(_guiControler.ShowGameOver());
+            while (_guiControler.IsShow)
+            {
+                yield return 0;
+            }
+
+            SceneManager.LoadScene("Menu");
+        }
+
+        private void TurnOffScripts(bool starus)
+        {
+            _enemyCotroler.TurnMoveScript(starus);
+            SetShootStatusEvent?.Invoke(starus);
+        }
     }
 }

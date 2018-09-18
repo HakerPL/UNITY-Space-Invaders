@@ -113,6 +113,72 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &53060662
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 53060663}
+  - component: {fileID: 53060665}
+  - component: {fileID: 53060664}
+  m_Layer: 0
+  m_Name: GameOverWall
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &53060663
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 53060662}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -4.16, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 216730081}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &53060664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 53060662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4b1c389db7b9c040aeeda8502288cc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &53060665
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 53060662}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 14.8, y: 1}
+  m_EdgeRadius: 0
 --- !u!1001 &152681490
 Prefab:
   m_ObjectHideFlags: 0
@@ -213,15 +279,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e8be0dd9d9eb7c34fa82cee4135e9c10, type: 3}
-  m_Color: {r: 0.7607844, g: 0.7607844, b: 0.7607844, a: 1}
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.5, y: 0.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &168075292
@@ -256,7 +322,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 168075290}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.08, y: -0.04528621, z: 0}
+  m_LocalPosition: {x: -8, y: -0.04528621, z: 0}
   m_LocalScale: {x: 1, y: 9.55, z: 1}
   m_Children: []
   m_Father: {fileID: 216730081}
@@ -307,8 +373,9 @@ Transform:
   - {fileID: 1778187184}
   - {fileID: 1055789125}
   - {fileID: 1172846054}
+  - {fileID: 53060663}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &341328345
 GameObject:
@@ -490,7 +557,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -534,7 +601,7 @@ RectTransform:
   - {fileID: 1560356211}
   - {fileID: 1127577403}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -550,6 +617,7 @@ GameObject:
   m_Component:
   - component: {fileID: 954541278}
   - component: {fileID: 954541277}
+  - component: {fileID: 954541279}
   m_Layer: 0
   m_Name: GameControler
   m_TagString: Untagged
@@ -576,13 +644,15 @@ MonoBehaviour:
   EnemysPrefab: {fileID: 1505380451116812, guid: 48c13c02f667ba84287b16054abd3aa0,
     type: 2}
   StartShootBetwen:
-    x: 100
-    y: 200
-  TimeBetwenShoot: 20
-  MoveSpeed: 2
-  SpeedAddWhenDead: 0.3
+    x: 2
+    y: 15
+  TimeBetwenShoot: 4
+  MoveSpeed: 0.2
+  MoveDownSpeed: 0.2
+  SpeedAddWhenDead: 0.8
   HowManyDeathsIncreaseSpeed: 3
   PointObject: {fileID: 1560356212}
+  EndGameWall: {fileID: 53060662}
 --- !u!4 &954541278
 Transform:
   m_ObjectHideFlags: 0
@@ -594,8 +664,25 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &954541279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 954541276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a41b3d2e7a161b947b8b4cdc3f45e204, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ParentGui: {fileID: 751661460}
+  Start: {fileID: 1402506891500758, guid: ddbced190eb9d4a449977814274056b8, type: 2}
+  NewWave: {fileID: 1754985501986466, guid: b0683241cfa2d804ab9273af4e9b0161, type: 2}
+  Dead: {fileID: 1336234518605240, guid: df9b2d521e3190241a5d5ffb390de055, type: 2}
+  GameOver: {fileID: 1903833163023596, guid: bdacf85c228f7f343a6a0f5b62f87f60, type: 2}
+  TimeShow: 2
 --- !u!1 &1030613199
 GameObject:
   m_ObjectHideFlags: 0
@@ -898,7 +985,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e8be0dd9d9eb7c34fa82cee4135e9c10, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -906,7 +993,7 @@ SpriteRenderer:
   m_Size: {x: 0.5, y: 0.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &1285580963
@@ -941,7 +1028,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1285580961}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.28, y: -0.04528621, z: 0}
+  m_LocalPosition: {x: 8, y: -0.04528621, z: 0}
   m_LocalScale: {x: 1, y: 9.55, z: 1}
   m_Children: []
   m_Father: {fileID: 216730081}
@@ -1079,7 +1166,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 10
+  far clip plane: 11.6
   field of view: 60
   orthographic: 1
   orthographic size: 5

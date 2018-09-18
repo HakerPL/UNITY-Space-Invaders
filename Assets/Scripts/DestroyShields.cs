@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
 
-public class DestroyShields : MonoBehaviour
+namespace Assets.Scripts
 {
-    void OnTriggerEnter2D(Collider2D other)
+    public class DestroyShields : MonoBehaviour
     {
-        if (other.tag != "Enemy")
-            return;
+        void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.tag != "Enemy")
+                return;
 
-        Destroy(gameObject);
+            Destroy(gameObject);
+        }
     }
 }

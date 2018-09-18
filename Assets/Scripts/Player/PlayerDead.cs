@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
 
-public class PlayerDead : MonoBehaviour
+namespace Assets.Scripts.Player
 {
-    public delegate void OnPlayerDead();
-    public event OnPlayerDead OnPlayerDeadEvent;
-
-    void OnDestroy()
+    public class PlayerDead : MonoBehaviour
     {
-        OnPlayerDeadEvent();
+        public delegate void OnPlayerDead();
+        public event OnPlayerDead OnPlayerDeadEvent;
+
+        void OnDestroy()
+        {
+            OnPlayerDeadEvent?.Invoke();
+        }
     }
 }

@@ -1,48 +1,54 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Unity.Mathematics;
+﻿using Unity.Mathematics;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D), typeof(Transform))]
-public class EnemyMove : MonoBehaviour
+namespace Assets.Scripts.Enemy
 {
-    public float Speed;
-    public float MoveDownSpeed;
-
-    private Rigidbody2D _rigidbody2D;
-    private Transform _transform;
-
-    private void AddSpeed(float speed)
+    [RequireComponent(typeof(Rigidbody2D), typeof(Transform))]
+    public class EnemyMove : MonoBehaviour
     {
-        Speed += speed;
-    }
+        public float Speed;
+        public float MoveDownSpeed;
 
-    // Use this for initialization
-    void Start ()
-    {
-        _rigidbody2D = GetComponent<Rigidbody2D>();
-        _transform = GetComponent<Transform>();
+        private Rigidbody2D _rigidbody2D;
+        private Transform _transform;
+        private Direction _courentDirectionMove;
 
-        MoveEnemy(DIRECTION.Right);
-	}
+        public void AddSpeed(float speed)
+        {
+            Speed += speed;
+            MoveEnemy(_courentDirectionMove);
+        }
 
-    public void Turn(DIRECTION direction)
-    {
-        MoveEnemy(direction);
-        MoveDown();
-    }
+        // Use this for initialization
+        void Start ()
+        {
+            _rigidbody2D = GetComponent<Rigidbody2D>();
+            _transform = GetComponent<Transform>();
 
-    private void MoveEnemy(DIRECTION direction)
-    {
-        float2 velocity = _rigidbody2D.velocity;
-        float force = Speed * Time.deltaTime * 50;
-        velocity.x = (int) direction * force;
-        _rigidbody2D.velocity = velocity;
-    }
+            _courentDirectionMove = Direction.Right;
 
-    private void MoveDown()
-    {
-        float3 newPosition = new float3(_transform.position.x, _transform.position.y - MoveDownSpeed, _transform.position.z);
-        _transform.position = newPosition;
+            MoveEnemy(_courentDirectionMove);
+        }
+
+        public void Turn(Direction direction)
+        {
+            MoveEnemy(direction);
+            MoveDown();
+        }
+
+        private void MoveEnemy(Direction direction)
+        {
+            _courentDirectionMove = direction;
+            float2 velocity = _rigidbody2D.velocity;
+            float force = Speed * Time.deltaTime * 50;
+            velocity.x = (int) direction * force;
+            _rigidbody2D.velocity = velocity;
+        }
+
+        private void MoveDown()
+        {
+            float3 newPosition = new float3(_transform.position.x, _transform.position.y - MoveDownSpeed, _transform.position.z);
+            _transform.position = newPosition;
+        }
     }
 }

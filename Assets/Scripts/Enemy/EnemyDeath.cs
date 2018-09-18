@@ -1,32 +1,35 @@
 ﻿using UnityEngine;
 
-public class EnemyDeath : MonoBehaviour
+namespace Assets.Scripts.Enemy
 {
-    public float TimeLiveEffectDestroy = 1f;
-    public GameObject EffectPrefab;
-    public int Points = 10;
-
-    void OnTriggerEnter2D(Collider2D other)
+    public class EnemyDeath : MonoBehaviour
     {
-        if (other.tag == "EnemyBullet" || other.tag != "PlayerBullet")
-            return;
+        public float TimeLiveEffectDestroy = 1f;
+        public GameObject EffectPrefab;
+        public int Points = 10;
 
-        Destroy(other.gameObject);
-        DestroyShip();
-    }
+        void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.tag == "EnemyBullet" || other.tag != "PlayerBullet")
+                return;
 
-    public delegate void OnEnemyDead(int Points);
-    public event OnEnemyDead OnEnemyDeadEvent;
+            Destroy(other.gameObject);
+            DestroyShip();
+        }
 
-    private void OnDestroy()
-    {
-        OnEnemyDeadEvent?.Invoke(Points);
-    }
+        public delegate void OnEnemyDead(int points);
+        public event OnEnemyDead OnEnemyDeadEvent;
 
-    private void DestroyShip()
-    {
-        var instance = Instantiate(EffectPrefab, transform.position, transform.rotation);
-        Destroy(instance.gameObject, TimeLiveEffectDestroy);
-        Destroy(gameObject);
+        private void OnDestroy()
+        {
+            OnEnemyDeadEvent?.Invoke(Points);
+        }
+
+        private void DestroyShip()
+        {
+            var instance = Instantiate(EffectPrefab, transform.position, transform.rotation);
+            Destroy(instance.gameObject, TimeLiveEffectDestroy);
+            Destroy(gameObject);
+        }
     }
 }

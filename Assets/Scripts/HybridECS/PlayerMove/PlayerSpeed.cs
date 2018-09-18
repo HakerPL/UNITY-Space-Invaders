@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 
-public class PlayerSpeed : MonoBehaviour
+namespace Assets.Scripts.HybridECS.PlayerMove
 {
-    public float Speed;
+    public class PlayerSpeed : MonoBehaviour
+    {
+        public float Speed;
+    }
 }

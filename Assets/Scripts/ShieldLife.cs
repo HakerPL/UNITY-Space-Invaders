@@ -1,33 +1,34 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class ShieldLife : MonoBehaviour
+namespace Assets.Scripts
 {
-    public float Live = 10;
-
-    private float _decreaseSpriteAlpha;
-    private SpriteRenderer _spriteRenderer;
-	// Use this for initialization
-	void Start ()
+    public class ShieldLife : MonoBehaviour
     {
-        _spriteRenderer = GetComponent<SpriteRenderer>();
-        _decreaseSpriteAlpha = _spriteRenderer.color.a / Live;
-    }
+        public float Live = 10;
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.tag != "EnemyBullet" && other.tag != "PlayerBullet")
-            return;
+        private float _decreaseSpriteAlpha;
+        private SpriteRenderer _spriteRenderer;
+        // Use this for initialization
+        void Start ()
+        {
+            _spriteRenderer = GetComponent<SpriteRenderer>();
+            _decreaseSpriteAlpha = _spriteRenderer.color.a / Live;
+        }
 
-        Live--;
+        void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.tag != "EnemyBullet" && other.tag != "PlayerBullet")
+                return;
 
-        Destroy(other.gameObject);
+            Live--;
 
-        if (Live <= 0)
-            Destroy(gameObject);
+            Destroy(other.gameObject);
 
-        _spriteRenderer.color = new Color(_spriteRenderer.color.r, _spriteRenderer.color.g, 
-                        _spriteRenderer.color.b, _spriteRenderer.color.a - _decreaseSpriteAlpha);
+            if (Live <= 0)
+                Destroy(gameObject);
+
+            _spriteRenderer.color = new Color(_spriteRenderer.color.r, _spriteRenderer.color.g, 
+                _spriteRenderer.color.b, _spriteRenderer.color.a - _decreaseSpriteAlpha);
+        }
     }
 }

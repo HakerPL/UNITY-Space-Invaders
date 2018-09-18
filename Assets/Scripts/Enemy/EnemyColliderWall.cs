@@ -1,29 +1,26 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Unity.Mathematics;
-using UnityEngine;
-using System.Linq;
-using System;
+﻿using UnityEngine;
 
-public enum DIRECTION
+namespace Assets.Scripts.Enemy
 {
-    Left = -1,
-    Right = 1
-}
-
-public class EnemyColliderWall : MonoBehaviour
-{
-    public delegate void OnEnemyTurn(DIRECTION direction);
-    public event OnEnemyTurn OnEnemyTurnEvent;
-
-    void OnCollisionEnter2D(Collision2D col)
+    public enum Direction
     {
-        var wallReflect = col.gameObject.GetComponent<WallReflect>();
+        Left = -1,
+        Right = 1
+    }
 
-        if (wallReflect == null)
-            return;
+    public class EnemyColliderWall : MonoBehaviour
+    {
+        public delegate void OnEnemyTurn(Direction direction);
+        public event OnEnemyTurn OnEnemyTurnEvent;
 
-        //Turn(wallReflect.ReflectDirection);
-        OnEnemyTurnEvent?.Invoke(wallReflect.ReflectDirection);
+        void OnCollisionEnter2D(Collision2D col)
+        {
+            var wallReflect = col.gameObject.GetComponent<WallReflect>();
+
+            if (wallReflect == null)
+                return;
+
+            OnEnemyTurnEvent?.Invoke(wallReflect.ReflectDirection);
+        }
     }
 }

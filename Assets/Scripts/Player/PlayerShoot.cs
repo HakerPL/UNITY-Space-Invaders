@@ -1,41 +1,42 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class PlayerShoot : MonoBehaviour
+namespace Assets.Scripts.Player
 {
-    public float TimeBetwenShoot;
-    public Transform SpawnBullet;
-    public GameObject BulletPrefab;
-
-    private bool _allowShoot;
-    private float _lastShootTime;
-
-    private void Start()
+    public class PlayerShoot : MonoBehaviour
     {
-        _lastShootTime = 0;
-    }
+        public float TimeBetwenShoot;
+        public Transform SpawnBullet;
+        public GameObject BulletPrefab;
 
-    // Update is called once per frame
-    void Update ()
-    {
-        Shoot();
-    }
+        private bool _allowShoot;
+        private float _lastShootTime;
 
-    private void Shoot()
-    {
-        if (!_allowShoot)
-            return;
-
-        if (Input.GetKeyDown("space") && _lastShootTime < Time.time)
+        private void Start()
         {
-            Instantiate(BulletPrefab, SpawnBullet.position, BulletPrefab.transform.rotation);
-            _lastShootTime = Time.time + TimeBetwenShoot;
+            _lastShootTime = 0;
         }
-    }
 
-    public void SetShootStatus(bool status)
-    {
-        _allowShoot = status;
+        // Update is called once per frame
+        void Update ()
+        {
+            Shoot();
+        }
+
+        private void Shoot()
+        {
+            if (!_allowShoot)
+                return;
+
+            if (Input.GetKeyDown("space") && _lastShootTime < Time.time)
+            {
+                Instantiate(BulletPrefab, SpawnBullet.position, BulletPrefab.transform.rotation);
+                _lastShootTime = Time.time + TimeBetwenShoot;
+            }
+        }
+
+        public void SetShootStatus(bool status)
+        {
+            _allowShoot = status;
+        }
     }
 }
