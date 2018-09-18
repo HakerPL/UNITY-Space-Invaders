@@ -25,7 +25,6 @@ GameObject:
   - component: {fileID: 82369498733020636}
   - component: {fileID: 114848412126250452}
   - component: {fileID: 114733330886005956}
-  - component: {fileID: 114971600369884402}
   - component: {fileID: 114459702610637136}
   m_Layer: 0
   m_Name: Player
@@ -161,7 +160,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -268,10 +267,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 967003632f2538f4aa28ed73610271ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TimeBetwenShoot: 2
+  TimeBetwenShoot: 0.8
   SpawnBullet: {fileID: 4314016469772672}
   BulletPrefab: {fileID: 1310846008358022, guid: 13731b5fbcc188747a47b3d6771e6227,
     type: 2}
+  ShootSound: {fileID: 8300000, guid: ddc39b4411839e840960f93dc3f7bd38, type: 3}
 --- !u!114 &114733330886005956
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -283,6 +283,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5102d465177bd5548a9f3121e6b71ddd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DeadSound: {fileID: 8300000, guid: 13a7f9af600dcd443b0522dcf04d1d93, type: 3}
+  TimeLiveEffectDestroy: 1
+  EffectPrefab: {fileID: 1446929744564900, guid: e4e1c9d70c1d6c242918d9b5cca11ace,
+    type: 2}
 --- !u!114 &114848412126250452
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -295,17 +299,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 12
---- !u!114 &114971600369884402
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1144796386750706}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 098aa062ef6f682418688da70d924286, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &212144077882851384
 SpriteRenderer:
   m_ObjectHideFlags: 1

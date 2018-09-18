@@ -3,15 +3,18 @@ using UnityEngine;
 
 namespace Assets.Scripts.Enemy
 {
+    [RequireComponent(typeof(AudioSource))]
     public class EnemyShoot : MonoBehaviour
     {
         public float2 StartShootBetwen;
         public float TimeBetwenShoot;
         public Transform SpawnBullet;
         public GameObject BulletPrefab;
+        public AudioClip ShootSound;
 
         private float _lastShootTime;
         private bool _allowShoot;
+        private AudioSource _audioSource;
 
         public void SetShootStatys(bool status)
         {
@@ -26,6 +29,7 @@ namespace Assets.Scripts.Enemy
 
         private void Start()
         {
+            _audioSource = GetComponent<AudioSource>();
             CalculateTimeShoot();
         }
 
@@ -43,7 +47,8 @@ namespace Assets.Scripts.Enemy
             {
                 Instantiate(BulletPrefab, SpawnBullet.position, BulletPrefab.transform.rotation);
                 _lastShootTime = Time.time + TimeBetwenShoot;
-                //enemyShootComponents.SoundEffect.Play();
+                if (_audioSource != null)
+                    _audioSource.PlayOneShot(ShootSound);
             }
         }
 

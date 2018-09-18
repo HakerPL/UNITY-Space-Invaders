@@ -326,7 +326,6 @@
 -i:E:/MojeProgramy/UNITY/UNITY-Space-Invaders/Assets/Scripts/HybridECS/PlayerMove/PlayerSpeed.cs
 -i:E:/MojeProgramy/UNITY/UNITY-Space-Invaders/Assets/Scripts/HybridECS/PlayerMove/PlayerSpeedSystem.cs
 -i:E:/MojeProgramy/UNITY/UNITY-Space-Invaders/Assets/Scripts/Player/PlayerDead.cs
--i:E:/MojeProgramy/UNITY/UNITY-Space-Invaders/Assets/Scripts/Player/PlayerLife.cs
 -i:E:/MojeProgramy/UNITY/UNITY-Space-Invaders/Assets/Scripts/Player/PlayerShoot.cs
 -i:E:/MojeProgramy/UNITY/UNITY-Space-Invaders/Assets/Scripts/ShieldLife.cs
 -i:E:/MojeProgramy/UNITY/UNITY-Space-Invaders/Assets/Scripts/WallReflect.cs

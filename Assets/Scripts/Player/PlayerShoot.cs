@@ -2,17 +2,21 @@
 
 namespace Assets.Scripts.Player
 {
+    [RequireComponent(typeof(AudioSource))]
     public class PlayerShoot : MonoBehaviour
     {
         public float TimeBetwenShoot;
         public Transform SpawnBullet;
         public GameObject BulletPrefab;
+        public AudioClip ShootSound;
 
         private bool _allowShoot;
         private float _lastShootTime;
+        private AudioSource _audioSource;
 
         private void Start()
         {
+            _audioSource = GetComponent<AudioSource>();
             _lastShootTime = 0;
         }
 
@@ -31,6 +35,8 @@ namespace Assets.Scripts.Player
             {
                 Instantiate(BulletPrefab, SpawnBullet.position, BulletPrefab.transform.rotation);
                 _lastShootTime = Time.time + TimeBetwenShoot;
+                if(_audioSource != null)
+                    _audioSource.PlayOneShot(ShootSound);
             }
         }
 

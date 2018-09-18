@@ -649,7 +649,7 @@ MonoBehaviour:
   TimeBetwenShoot: 4
   MoveSpeed: 0.2
   MoveDownSpeed: 0.2
-  SpeedAddWhenDead: 0.8
+  SpeedAddWhenDead: 0.5
   HowManyDeathsIncreaseSpeed: 3
   PointObject: {fileID: 1560356212}
   EndGameWall: {fileID: 53060662}

@@ -159,7 +159,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -255,7 +255,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 458d390d6bb83de4f9d3a0395aaea974, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 2
 --- !u!114 &114697942071100058
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -270,6 +269,8 @@ MonoBehaviour:
   TimeLiveEffectDestroy: 1
   EffectPrefab: {fileID: 1446929744564900, guid: e4e1c9d70c1d6c242918d9b5cca11ace,
     type: 2}
+  Points: 10
+  DeadSound: {fileID: 8300000, guid: 7f9aeb16a2617284b9ed47bcbb0d9dc4, type: 3}
 --- !u!114 &114714088812411522
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -281,7 +282,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96e67a1fdd0afda4d899b35db9ed0e2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AllowShoot: 0
   StartShootBetwen:
     x: 2
     y: 6
@@ -289,6 +289,7 @@ MonoBehaviour:
   SpawnBullet: {fileID: 4644141967984952}
   BulletPrefab: {fileID: 1645239920012378, guid: fbbfecad87078384ea8d345a08a74747,
     type: 2}
+  ShootSound: {fileID: 8300000, guid: 87edb48628091774c95661fd96882781, type: 3}
 --- !u!212 &212277295248689068
 SpriteRenderer:
   m_ObjectHideFlags: 1

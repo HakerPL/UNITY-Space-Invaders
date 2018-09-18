@@ -14,7 +14,8 @@ namespace Assets.Scripts.GameControler
 
         public void UpdatePoint(int newValuePoint)
         {
-            _pointObject.text = newValuePoint.ToString();
+            if(_pointObject != null)
+                _pointObject.text = newValuePoint.ToString();
         }
     }
 }

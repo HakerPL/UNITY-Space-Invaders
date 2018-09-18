@@ -78,7 +78,6 @@
     <Compile Include="Assets\Scripts\HybridECS\PlayerMove\PlayerSpeed.cs" />
     <Compile Include="Assets\Scripts\HybridECS\PlayerMove\PlayerSpeedSystem.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerDead.cs" />
-    <Compile Include="Assets\Scripts\Player\PlayerLife.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerShoot.cs" />
     <Compile Include="Assets\Scripts\ShieldLife.cs" />
     <Compile Include="Assets\Scripts\WallReflect.cs" />
