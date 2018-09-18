@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameControler : MonoBehaviour
@@ -81,16 +82,19 @@ public class GameControler : MonoBehaviour
 
         SetShootStatusEvent(false);
 
+        SpawnLifesObject.DestroyLife();
+
+        if (SpawnLifesObject.GetCountLifes() == 0)
+        {
+            SceneManager.LoadScene("Menu");
+            return;
+        }
+
         StartCoroutine(PlayerDead());
     }
 
     private IEnumerator PlayerDead()
     {
-        SpawnLifesObject.DestroyLife();
-
-        if (SpawnLifesObject.GetCountLifes() == 0)
-            yield break;
-
         yield return new WaitForSeconds(2f);
 
         _playerSpawn.SpawnPlayer()
